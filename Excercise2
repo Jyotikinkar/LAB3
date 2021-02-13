@@ -1,0 +1,28 @@
+package com;
+
+import java.util.Scanner;
+
+public class StringPipe {
+	
+	public String getImage(String str)
+    {
+           StringBuffer string1 = new StringBuffer(str);
+           string1.append('|');
+           StringBuffer string2 = new StringBuffer(str);
+           string2.reverse();
+           string1.append(string2);
+           return string1.toString();
+    }
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		StringPipe p = new StringPipe();
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a String: ");
+        String str = s.next();
+        System.out.println(p.getImage(str));
+
+	}
+
+}

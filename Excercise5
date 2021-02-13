@@ -1,0 +1,38 @@
+package com;
+
+import java.util.Scanner;
+
+public class Countcharswords {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i,count=0,wordCount=0;
+		Scanner sc=new Scanner(System.in);		
+		String str=sc.nextLine();
+
+        for(i = 0; i < str.length(); i++) {    
+            if(str.charAt(i) != ' ')    
+                count++;
+        }
+        char ch[]= new char[str.length()];      
+
+        if (!(" ".equals(str.substring(0, 1))) || !(" ".equals(str.substring(str.length() - 1))))
+        {
+            for (int j = 0; j < str.length(); j++)
+            {
+                /*if (str.charAt(j) == ' ')
+                {
+                    wordCount++;
+                }*/
+            	ch[j]= str.charAt(j);
+                if( ((j>0)&&(ch[j]!=' ')&&(ch[j-1]==' ')) || ((ch[0]!=' ')&&(j==0)) )
+                wordCount++;
+            }
+			/* wordCount = wordCount + 1; */
+        
+        System.out.println("Character Count: "+count);
+        System.out.println("Word Count: "+wordCount);
+        }
+	}
+}

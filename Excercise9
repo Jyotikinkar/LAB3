@@ -1,0 +1,21 @@
+package com;
+
+import java.time.LocalDate;
+import java.time.Period;
+
+public class DateDiff {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LocalDate d = LocalDate.of(1999,06,04);
+		LocalDate current=LocalDate.now();
+		System.out.println("Difference between the Dates:");
+		System.out.println(d);
+		System.out.println(LocalDate.now());
+		Period diff=Period.between(d, current);
+		
+		System.out.println("Years:" +diff.getYears()+"\tMonths:"+diff.getMonths()+"\tDays:"+diff.getDays());
+	}
+
+}
